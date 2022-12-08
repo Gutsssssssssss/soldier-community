@@ -17,7 +17,7 @@ function Heading() {
           
             <Link to="/upload" style={{ color: "white", textDecoration: "none", marginRight: "10px"}}>upload</Link>
           
-            <Link to="/" style={{ color: "white", textDecoration: "none", marginRight: "10px"}}>list</Link> 
+            <Link to="/login" style={{ color: "white", textDecoration: "none", marginRight: "10px"}}>login</Link> 
              
           </Nav>
         </Navbar.Collapse>
