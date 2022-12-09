@@ -27,6 +27,9 @@ function List(props) {
           <p className='title'>
             제목 : {post.title}
           </p>
+          <div className='author'>
+          <p>{post.author.displayName}</p>
+          </div>
           <p>
           내용: {post.content}
           </p>

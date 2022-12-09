@@ -4,7 +4,15 @@ const postSchema = new mongoose.Schema({
     title: String,
     content: String,
     postNum: Number,
-    image: String
+    image: String,
+    author: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+    },
+    repleNum: {
+        type: Number,
+        default: 0,
+    }
 }, {collection : "Posts"});
 
 

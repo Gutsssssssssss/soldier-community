@@ -1,35 +1,15 @@
 import React, {useState, useEffect} from 'react'
+import {useSelector} from 'react-redux'
 import { Link, useParams, useNavigate} from 'react-router-dom'
 import axios from 'axios';
-import { Spinner } from 'react-bootstrap';
 import {PostDiv, SpinnerDiv, Post, BtnDiv } from '../../Style/PostDetailCSS';
 
 
-function Detail() {
+function Detail(props) {
     let params = useParams();
     let navigate = useNavigate();
-    const [PostInfo, setPostInfo] = useState({})
-    const [Flag, setFlag] = useState(false);
-
-    useEffect(() => {
-        let body = {
-            postNum : params.postNum
-        }
-      axios.post("/api/post/detail", body).then((response) => {
-        if(response.data.success){
-            setPostInfo(response.data.postList);
-            setFlag(true);
-            console.log(PostInfo);
-        }
-        
-      }).catch((err) => {
-        console.log(err);
-      })
-    }, []);
-
-    useEffect(() => {
-      console.log(PostInfo);
-    }, [PostInfo]);
+    const user = useSelector((state) => state.user);
+    
 
     const DeleteHandler = () => {
         if(window.confirm("정말 삭제하시겠습니까?")) {
@@ -51,33 +31,30 @@ function Detail() {
     
   return (
     <PostDiv>
-        {Flag ? (
+     
         <>
         <Post>
-        <h1>{PostInfo.title}</h1>
-        {PostInfo.image ? (
+        <h1>{props.PostInfo.title}</h1>
+        <div className="author">
+        <p>{props.PostInfo.author.displayName}</p>
+        </div>
+        {props.PostInfo.image ? (
         <img 
-        src={`http://localhost:5000/${PostInfo.image}`} 
+        src={`http://localhost:5000/${props.PostInfo.image}`} 
         alt="" 
         style={{width:"100%", height:"auto"}}
         />
         ) : null}
-        <p>{PostInfo.content} </p>
+        <p>{props.PostInfo.content} </p>
     </Post>
-    <BtnDiv>
-        <Link to = {`/edit/${PostInfo.postNum}`}>
+    {user.uid === props.PostInfo.author.uid && (<BtnDiv>
+        <Link to = {`/edit/${props.PostInfo.postNum}`}>
         <button className='edit'>수정</button>
         </Link>
         <button className='delete' onClick={()=>DeleteHandler()}>삭제</button>
-    </BtnDiv>
+    </BtnDiv>)}
     </>
-    ) : (
-    <SpinnerDiv>
-    <Spinner animation="border" role="status">
-      <span className="visually-hidden">로딩중...</span>
-    </Spinner>
-    </SpinnerDiv>
-        )} 
+    
     </PostDiv>
   )
 }
