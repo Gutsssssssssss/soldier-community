@@ -13,7 +13,7 @@ function ImageUpload(props) {
     }
   return (
     <div>
-        <Form.Control type="file" className="shadow-none"  accept="image/*" onChange={(e) => FileUpload(e)}/>
+        <Form.Control type="file" className="shadow-none"  accept="image/*" onChange={(e) => FileUpload(e)} style={{color: '#000080'}}/>
     </div>
   )
 }

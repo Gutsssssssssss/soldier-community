@@ -1,14 +1,26 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import {useSelector} from 'react-redux'
 import { Link, useParams, useNavigate} from 'react-router-dom'
 import axios from 'axios';
-import {PostDiv, SpinnerDiv, Post, BtnDiv } from '../../Style/PostDetailCSS';
+import {PostDiv, Post, BtnDiv } from '../../Style/PostDetailCSS';
+
+
+import moment from "moment";
+import "moment/locale/ko";
 
 
 function Detail(props) {
     let params = useParams();
     let navigate = useNavigate();
     const user = useSelector((state) => state.user);
+
+    const SetTime = (a, b) => {
+      if(a !== b) {
+        return moment(b).format("YYYY년 MMMM Do, hh:mm a") + "(수정됨)";
+      } else {
+        return moment(a).format("YYYY년 MMMM Do, hh:mm a");
+      }
+    }
     
 
     const DeleteHandler = () => {
@@ -31,12 +43,17 @@ function Detail(props) {
     
   return (
     <PostDiv>
-     
         <>
         <Post>
         <h1>{props.PostInfo.title}</h1>
         <div className="author">
-        <p>{props.PostInfo.author.displayName}</p>
+        <p><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+          </svg> {props.PostInfo.author.displayName}</p>
+        <p className="time">
+            {SetTime(props.PostInfo.createdAt, props.PostInfo.updatedAt)}
+          </p>
         </div>
         {props.PostInfo.image ? (
         <img 
@@ -47,6 +64,7 @@ function Detail(props) {
         ) : null}
         <p>{props.PostInfo.content} </p>
     </Post>
+    <br/><br/><br/>
     {user.uid === props.PostInfo.author.uid && (<BtnDiv>
         <Link to = {`/edit/${props.PostInfo.postNum}`}>
         <button className='edit'>수정</button>

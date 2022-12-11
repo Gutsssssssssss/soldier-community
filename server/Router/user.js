@@ -37,4 +37,17 @@ router.post("/nameCheck", (req, res) => {
     });
 });
 
+router.post("/getDisplayName", (req, res)=> {
+    User.findOne({uid : req.body.uid}).exec().then((userInfo) => {
+        return res.status(200).json({
+            success: true,
+            displayName: userInfo.displayName      
+        });
+    }).catch((err)=> {
+        return res.status(400).json({
+            success: false,
+        });
+    })
+});
+
 module.exports = router;     

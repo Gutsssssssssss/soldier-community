@@ -85,7 +85,8 @@ function Register() {
 
 
   return (
-    <LoginDiv>
+    <>
+    <LoginDiv style={{display: 'flex', justifyContent : 'center'}}>
       <form>
         <label>닉네임</label>
         <input type="name" value={Name} disabled= {NameCheck} onChange={(e) => setName(e.currentTarget.value)}/>
@@ -100,6 +101,9 @@ function Register() {
         <button disabled={Flag} onClick={(e)=>RegisterFunc(e)}>회원가입</button>
       </form> 
     </LoginDiv>
+    <br/><br/><br/><br/>
+    </>
+    
   )
 }
 

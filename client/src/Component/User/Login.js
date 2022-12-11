@@ -49,7 +49,8 @@ function Login() {
     }, [ErrorMsg]);
     
   return (
-    <LoginDiv>
+    <>
+    <LoginDiv style={{display: 'flex', justifyContent : 'center'}}>
         <form>
             <label>이메일</label>
             <input type="email" value={Email} required onChange={(e) => setEmail(e.currentTarget.value)}/>
@@ -64,7 +65,10 @@ function Login() {
                 navigate("/register");
             }}>회원가입</button>
         </form>
+        
     </LoginDiv>
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+    </>
   )
 }
 

@@ -25,7 +25,7 @@ const RepleUploadDiv = styled.div`
       padding: 10px;
       height: 100%;
       border-radius: 10px 0px 0px 10px;
-      border: 0.5px solid #c6c6c6;
+      border: 0.5px solid #000080;
 
       &:active,
       &:focus {
@@ -35,9 +35,10 @@ const RepleUploadDiv = styled.div`
     button {
       height: 100%;
       border-radius: 0px 10px 10px 0px;
-      border: 0.5px solid #c6c6c6;
+      border: 0.5px solid #000080;
       font-weight: bold;
-      background-color: #c6c6c6;
+      background-color: white;
+      color: #000080;
       &:hover,
       &:active {
         border: 0.5px solid darkgrey;

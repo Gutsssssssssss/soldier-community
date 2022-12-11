@@ -17,7 +17,7 @@ const LoginDiv = styled.div`
     }
     input {
       border-radius: 10px;
-      border: 1px solid #c6c6c6;
+      border: solid #000080;
       padding: 5px;
       margin-bottom: 10px;
 
@@ -29,7 +29,7 @@ const LoginDiv = styled.div`
     button {
       border-radius: 15px;
       padding: 5px 10px;
-      background-color: black;
+      background-color: #000080;
       color: white;
       border: 1px solid black;
       margin-top: 10px;
@@ -49,36 +49,4 @@ const LoginDiv = styled.div`
   }
 `;
 
-const MyPageDiv = styled.div`
-  width: 100vw;
-  height: 100vh;
-  form {
-    margin-top: 2rem;
-    width: 50%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    label {
-      margin-bottom: 2rem;
-      input {
-        display: none;
-      }
-    }
-    button {
-      border-radius: 15px;
-      padding: 5px 10px;
-      background-color: black;
-      color: white;
-      border: 1px solid black;
-      margin-top: 10px;
-      &:hover {
-        background-color: white;
-        color: black;
-        border: 1px solid black;
-      }
-    }
-  }
-`;
-
-export { LoginDiv, MyPageDiv };
+export { LoginDiv };

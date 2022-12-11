@@ -10,7 +10,7 @@ const repleSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         
     }
-}, {collection : "reples"});
+}, {collection : "reples", timestamps: true});
 
 
 const Reple = mongoose.model("Reple", repleSchema);

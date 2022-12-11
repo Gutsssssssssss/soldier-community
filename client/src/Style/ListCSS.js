@@ -58,4 +58,51 @@ const ListItem = styled.div`
   }
 `;
 
-export { ListDiv, ListItem };
+const NoticeItem = styled.div`
+  width: 100%;
+  height: auto;
+  min-height: 120px;
+  background: #ffffff;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  padding: 20px;
+  border:  solid #000080;
+  .title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0px;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        margin-left: 10px;
+        margin-bottom: 0px;
+        &.admin {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+    p {
+      color: darkgrey;
+      margin-bottom: 0px;
+      &.time {
+        font-size: 10px;
+      }
+    }
+  }
+  a {
+    color: black;
+    text-decoration: none;
+    .title {
+      font-weight: bold;
+    }
+  }
+`;
+export { ListDiv, ListItem, NoticeItem };
