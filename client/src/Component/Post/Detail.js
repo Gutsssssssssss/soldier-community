@@ -15,11 +15,9 @@ function Detail(props) {
     const user = useSelector((state) => state.user);
 
     const SetTime = (a, b) => {
-      if(a !== b) {
-        return moment(b).format("YYYY년 MMMM Do, hh:mm a") + "(수정됨)";
-      } else {
+      
         return moment(a).format("YYYY년 MMMM Do, hh:mm a");
-      }
+      
     }
     
 

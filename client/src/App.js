@@ -10,7 +10,6 @@ import Footer from './Component/Footer';
 
 import MainPage from './Component/MainPage';
 import Upload from './Component/Post/Upload';
-import Detail from './Component/Post/Detail';
 import Edit from './Component/Post/Edit';
 import PostArea from './Component/Post/PostArea';
 

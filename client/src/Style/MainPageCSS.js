@@ -20,8 +20,7 @@ const GNBDiv = styled.div`
     input {
       padding: 5px 20px;
       border-radius: 15px 0px 0px 15px;
-      border: solid #000080;
-      color: #000080;
+      border: solid #5FCC29;
       height: 100%;
       &:active,
       &:focus {
@@ -31,9 +30,10 @@ const GNBDiv = styled.div`
     button {
       background-color: white;
       height: 100%;
-      border-top: solid #000080;
-      border-bottom: solid #000080;
-      border-left: 0.5px solid #000080;
+      border-top: solid #5FCC29;
+      border-bottom: solid #5FCC29;
+      border-left: 0.5px solid #5FCC29;
+      border-right: solid #5FCC29;
       border-radius: 0px 15px 15px 0px;
       margin-bottom: -1px;
     }

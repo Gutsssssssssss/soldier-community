@@ -17,8 +17,7 @@ const ListItem = styled.div`
   margin-top: 5vh;
   margin-bottom: 5vh;
   padding: 20px;
-  box-shadow: 0px 19px 38px rgba(0, 0, 0, 0.03),
-    0px 15px 12px rgba(0, 0, 0, 0.1);
+  border:  solid #5FCC29;
   .title {
     font-weight: bold;
     margin-bottom: 10px;
@@ -66,7 +65,8 @@ const NoticeItem = styled.div`
   margin-top: 5vh;
   margin-bottom: 5vh;
   padding: 20px;
-  border:  solid #000080;
+  box-shadow: 0px 19px 38px #5FCC29,
+    0px 5px 12px #5FCC29;
   .title {
     font-weight: bold;
     margin-bottom: 10px;

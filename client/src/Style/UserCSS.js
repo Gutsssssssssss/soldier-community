@@ -8,8 +8,7 @@ const LoginDiv = styled.div`
   form {
     width: 70%;
     padding: 20px;
-    box-shadow: 0px 19px 38px rgba(0, 0, 0, 0.03),
-      0px 15px 12px rgba(0, 0, 0, 0.1);
+    border:  solid #5FCC29;
     display: flex;
     flex-direction: column;
     label {
@@ -17,7 +16,7 @@ const LoginDiv = styled.div`
     }
     input {
       border-radius: 10px;
-      border: solid #000080;
+      border: solid #5FCC29;
       padding: 5px;
       margin-bottom: 10px;
 
@@ -29,9 +28,9 @@ const LoginDiv = styled.div`
     button {
       border-radius: 15px;
       padding: 5px 10px;
-      background-color: #000080;
+      background-color: #5FCC29;
       color: white;
-      border: 1px solid black;
+      border: 1px solid #5FCC29;
       margin-top: 10px;
       &:hover {
         background-color: white;

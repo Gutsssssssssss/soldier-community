@@ -25,7 +25,7 @@ const RepleUploadDiv = styled.div`
       padding: 10px;
       height: 100%;
       border-radius: 10px 0px 0px 10px;
-      border: 0.5px solid #000080;
+      border: solid #5FCC29;
 
       &:active,
       &:focus {
@@ -35,10 +35,13 @@ const RepleUploadDiv = styled.div`
     button {
       height: 100%;
       border-radius: 0px 10px 10px 0px;
-      border: 0.5px solid #000080;
+      border-top: solid #5FCC29;
+      border-bottom: solid #5FCC29;
+      border-left: 0.5px solid #5FCC29;
+      border-right: solid #5FCC29;
       font-weight: bold;
       background-color: white;
-      color: #000080;
+      color: #5FCC29;
       &:hover,
       &:active {
         border: 0.5px solid darkgrey;
@@ -65,7 +68,7 @@ const RepleListDiv = styled.div`
 `;
 
 const RepleContentDiv = styled.div`
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.03), 0px 7.5px 6px rgba(0, 0, 0, 0.1);
+border:  solid #5FCC29;
   padding: 20px 10px;
   margin-bottom: 10px;
   .author {
