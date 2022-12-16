@@ -33,7 +33,7 @@ function Heading() {
   return (
     <Navbar  expand="lg" variant="dark" style={{backgroundColor: '#5FCC29'}}>
       <Container>
-        <Navbar.Brand href="/" style={{ fontFamily: '"Do Hyeon", sans-serif',fontWeight: 'bold', fontSize: '40px'}}>다락방</Navbar.Brand>
+        <Navbar.Brand href="/" style={{ fontFamily: '"Do Hyeon", sans-serif',fontWeight: 'bold', fontSize: '40px'}}>연등</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
