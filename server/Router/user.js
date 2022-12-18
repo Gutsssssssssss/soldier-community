@@ -4,6 +4,7 @@ const router = express.Router();
 const {User} = require('../Model/User')
 const {Counter} = require('../Model/Counter');
 
+// 회원을 데이터베이스에 등록
 router.post("/register", (req, res) => {
 
     let temp = req.body;
@@ -22,7 +23,7 @@ router.post("/register", (req, res) => {
     });
 });
 
-
+// 닉네임 중복확인
 router.post("/nameCheck", (req, res) => {
     User.findOne({displayName : req.body.displayName}).exec().then((doc) => {
         let check = true;
@@ -37,6 +38,8 @@ router.post("/nameCheck", (req, res) => {
     });
 });
 
+
+// 닉네임 불러오기
 router.post("/getDisplayName", (req, res)=> {
     User.findOne({uid : req.body.uid}).exec().then((userInfo) => {
         return res.status(200).json({

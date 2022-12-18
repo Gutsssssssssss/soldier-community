@@ -78,7 +78,7 @@ function Register() {
           setNameCheck(true);
           setNameInfo("사용가능한 닉네임입니다.");
         } else
-        setNameInfo("사용불가능한 닉네임입니다.");
+        setNameInfo("이미 존재하는 닉네임입니다.");
       }
     })
   }

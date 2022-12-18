@@ -106,7 +106,7 @@ function MainPage() {
             style={{ marginBottom: "10vh", border: ' solid #5FCC29'}}
             onClick={() => getLoadMore()}
           >
-            더 불러오기
+            더 보기
           </button>
         </FooterDiv>
       )}

@@ -48,10 +48,10 @@ function Edit() {
 
         axios.post("/api/post/edit", body).then((response) => {
           if(response.data.success) {
-            alert("글 수정이 완료되었습니다.");
+            alert("수정이 완료되었습니다.");
             navigate(`/post/${params.postNum}`);
           } else {
-            alert("글 수정에 실패하였습니다.");
+            alert("수정에 실패하였습니다.");
           }
         }).catch((err) => {
           console.log(err);

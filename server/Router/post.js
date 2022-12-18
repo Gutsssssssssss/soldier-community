@@ -6,6 +6,7 @@ const {Post} = require('../Model/Post');
 const {Counter} = require('../Model/Counter');
 const {User} = require('../Model/User');
 
+// 게시글 등록
 router.post("/submit", (req, res) => {  
     let temp = {
       title: req.body.title,
@@ -29,6 +30,7 @@ router.post("/submit", (req, res) => {
     
   });
   
+  // 게시글 목록 불러옴
   router.post("/list", (req, res) => {  
 
     let sort = {};
@@ -47,7 +49,7 @@ router.post("/submit", (req, res) => {
     });
   });
   
-  
+  // 게시글 불러오기
   router.post("/detail", (req, res) => {  
     Post.findOne({postNum : Number(req.body.postNum)}).populate("author").exec().then((doc) => {
       
@@ -57,6 +59,7 @@ router.post("/submit", (req, res) => {
     });
   });
   
+  // 게시글 수정
   router.post("/edit", (req, res) => {  
     let temp = {
       title: req.body.title,
@@ -70,7 +73,7 @@ router.post("/submit", (req, res) => {
     });
   });
   
-  
+  // 게시글 삭제
   router.post("/delete", (req, res) => {  
     Post.deleteOne({postNum : Number(req.body.postNum)}).exec().then(() => {
   
@@ -94,6 +97,7 @@ router.post("/submit", (req, res) => {
   const upload = multer({ storage: storage }).single("file");
 
 
+  // 이미지 업로드
   router.post("/image/upload", (req, res) => {
     upload(req, res, (err) => {
       if (err) {
